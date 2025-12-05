@@ -1,0 +1,16 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore runs and outputs
+runs/
+thermal_detection_output.mp4
+thermal_predictions.csv
+
+# Ignore large datasets (optional)
+datasets/
+dataset/
+test_images/
