@@ -1,18 +1,18 @@
-from ultralytics import YOLO
-import torch
+from thermal_model.thermal_yolov8 import ThermalYOLOv8
 
-print("PyTorch:", torch.__version__)
+def main():
+    model = ThermalYOLOv8(model_path='yolov8n.pt', in_channels=1, num_classes=5)
+    
+    # Train on your dataset
+    model.model.train(
+        data='dataset.yaml',
+        epochs=30,
+        imgsz=416,
+        batch=4,
+        device='cpu',
+        name='thermal_detection_run',
+        workers=2
+    )
 
-# Use yolov8n pretrained as starting point (smallest for CPU)
-model = YOLO('yolov8n.pt')
-
-# Train (CPU friendly)
-model.train(
-    data='dataset.yaml',   # path to dataset.yaml you created
-    epochs=30,             # reduce on CPU if needed
-    imgsz=416,
-    batch=4,               # decrease if OOM, try 2
-    device='cpu',
-    name='thermal_detection_run',
-    workers=2
-)
+if __name__ == "__main__":
+    main()

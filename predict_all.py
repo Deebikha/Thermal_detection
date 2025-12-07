@@ -3,7 +3,7 @@ import csv
 import os
 
 # Load your trained YOLOv8 model
-model = YOLO("runs/detect/thermal_detection_run2/weights/best.pt")
+model = YOLO("runs/detect/thermal_detection_run5/weights/best.pt")
 
 # Get class names
 class_names = model.names  # {0: "person", 1: "bicycle", ...}

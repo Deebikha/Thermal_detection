@@ -7,7 +7,7 @@ import time
 # -------------------------------
 # Step 1: Load your trained YOLO model
 # -------------------------------
-model = YOLO("runs/detect/thermal_detection_run2/weights/best.pt")
+model = YOLO("runs/detect/thermal_detection_run6/weights/best.pt")
 class_names = model.names  # dictionary of class labels
 
 # -------------------------------
